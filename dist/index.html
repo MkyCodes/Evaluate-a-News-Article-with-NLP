@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <title>Analyze News Article</title>
+    <script defer src="bundle.3896bcd5497f6e3fa4bf.js"></script>
+</head>
+<body>
+    <!-- Main container for the form -->
+    <div class="content-container">
+        <form id="articleForm" method="post" onsubmit="return App.processForm(event)">
+            <label for="articleURL">Paste the Article URL:</label>
+            <input id="articleURL" name="articleURL" type="url" required />
+            <button type="submit">Analyze Article</button>
+        </form>
+    </div>
+    
+    <!-- Error message container -->
+    <div id="errorContainer" style="display: none;"></div>
+    
+    <!-- Results section -->
+    <div id="analysisResults">
+        <h2>Analysis Results:</h2>
+        <div id="loadingSpinner" style="display: none;"></div>
+        <ul id="resultList">
+            <li id="sentiment"></li>
+            <li id="subjective"></li>
+            <li id="confidenceLevel"></li>
+            <li id="ironyDetection"></li>
+            <li id="overallScore"></li>
+        </ul>
+    </div>
+</body>
+</html>

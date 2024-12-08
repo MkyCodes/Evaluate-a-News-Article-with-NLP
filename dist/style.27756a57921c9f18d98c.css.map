@@ -1,0 +1,112 @@
+// Variables
+$main-color: #5d8c31; // Changed from #4CAF50
+$highlight-color: #4c7d37; // Changed from #3e8e41
+
+// Mixins
+@mixin custom-shadow($shadow) {
+  -webkit-box-shadow: $shadow;
+  -moz-box-shadow: $shadow;
+  box-shadow: $shadow;
+  box-sizing: border-box;
+}
+
+// Base styles
+body {
+  font-family: 'Verdana', sans-serif; // Changed font from Arial to Verdana
+  background-color: #f7f7f7; // Slightly lighter background
+
+  form {
+    margin: 25px;
+    padding: 25px;
+    background-color: #fff;
+    border-radius: 12px; // Increased border-radius for a smoother look
+    @include custom-shadow(0 0 12px rgba(0, 0, 0, 0.15)); // Changed shadow
+  }
+
+  label {
+    display: block;
+    margin-bottom: 12px;
+    font-weight: 700; // Increased boldness
+  }
+
+  input[type="text"] {
+    width: 100%;
+    padding: 12px;
+    margin-bottom: 25px;
+    border-radius: 6px; // Increased border-radius
+    border: none;
+    @include custom-shadow(0 0 6px rgba(0, 0, 0, 0.1)); // Adjusted shadow
+    &:focus {
+      outline: none;
+      @include custom-shadow(0 0 6px rgba(0, 0, 0, 0.3)); // Increased shadow on focus
+    }
+  }
+
+  button[type="submit"] {
+    background-color: $main-color;
+    color: white;
+    padding: 12px 25px; // Increased padding
+    border: none;
+    border-radius: 6px;
+    cursor: pointer;
+    &:hover {
+      background-color: $highlight-color;
+    }
+  }
+}
+
+// Loader Spinner
+#spinner {
+  border: 16px solid #f3f3f3;
+  border-top: 16px solid #3498db;
+  border-radius: 50%;
+  width: 130px; // Increased size
+  height: 130px; // Increased size
+  animation: spin 2s linear infinite;
+  margin: 60px auto; // Adjusted margin for better centering
+}
+
+@keyframes spin {
+  0% {
+    transform: rotate(0deg);
+  }
+  100% {
+    transform: rotate(360deg);
+  }
+}
+
+// Error Message
+#error-message {
+  @include custom-shadow(0 0 12px rgba(0, 0, 0, 0.1));
+  margin: 25px;
+  padding: 25px;
+  background-color: #ffeb3b; // Changed to yellow
+  color: #333;
+  border-radius: 12px;
+  font-size: 16px;
+}
+
+// Results Styling
+#result-container {
+  margin: 25px;
+  padding: 25px;
+  background-color: #fff;
+  border-radius: 12px;
+  @include custom-shadow(0 0 12px rgba(0, 0, 0, 0.1));
+
+  h2 {
+    margin-top: 0;
+    font-size: 26px;
+    font-weight: bold;
+  }
+
+  ul {
+    list-style: none;
+    padding: 0;
+    margin: 0;
+    li {
+      margin-bottom: 12px; // Increased margin
+      font-size: 20px; // Slightly larger font
+    }
+  }
+}

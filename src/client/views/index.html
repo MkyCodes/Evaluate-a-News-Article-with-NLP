@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>News Article Analyzer</title>
+</head>
+
+<body>
+    <div class="content">
+        <form id="articleForm" method="post" onsubmit="return App.submitForm(event)">
+            <label for="urlInput">Enter Article URL:</label>
+            <input type="text" id="urlInput" name="urlInput" />
+            <button type="submit" value="Analyze">Analyze</button>
+        </form>
+    </div>
+    <div id="errorMessage" style="display: none;"></div>
+    <div id="analysisResults">
+        <h2>Analysis Results:</h2>
+        <div id="loadingSpinner" style="display: none;"></div>
+
+        <ul id="analysisList">
+            <li id="agreementStatus"></li>
+            <li id="subjectivityLevel"></li>
+            <li id="confidenceLevel"></li>
+            <li id="ironyDetected"></li>
+            <li id="overallScore"></li>
+        </ul>
+    </div>
+</body>
+
+</html>
